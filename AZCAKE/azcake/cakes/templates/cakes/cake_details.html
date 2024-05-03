@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'cakes/main.css' %}">
+  </head>
+  <body>
+    <div class="cake_details-body">
+      
+      <header>
+        <ul>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="active" href="#about">About</a></li>
+        </ul>
+      </header>
+        <div class="cake_details-container">  
+          <div class="cake-detal-content">
+            <div class="img">
+            <img src="{{ pinqvin.image_url }}" width="100%" height="100%">
+          </div>
+            <div class="main">
+              <table>
+                <tr>
+                  <th>Name</th>
+                  <th>{{ pinqvin.name }}</th>
+                </tr>
+                <tr>
+                  <td>Mezmun</td>
+                  <td>{{ pinqvin.description }}</td>
+                </tr>
+                <tr>
+                  <td>Weight</td>
+                  <td>{{ pinqvin.weight }}</td>
+                </tr>
+                <tr>
+                  <td>Price</td>
+                  <td>{{ pinqvin.price }} AZN</td>
+                </tr>
+                <tr>
+                  <td>Bake date</td>
+              <td>{{ pinqvin.baked_at }}</td>
+            </tr>
+            <tr>
+              <td>Rating</td>
+              <td>
+                {{ pinqvin.rating }}
+                <img src="https://cdn1.iconfinder.com/data/icons/social-object-set-5-3/74/25-512.png" width="20px">
+              </td>
+            </tr>
+            <tr>
+              <td>Stock Amount</td>
+              <td>{{ pinqvin.stock_amount }}</td>
+            </tr>
+          </table>
+            </div>
+          </div>
+        </div>
+    </div>
+ </body>
+ </html>

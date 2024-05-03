@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'cakes/main.css' %}">
+</head> 
+<body>
+  <div class="contact-body">
+    <header>
+      <ul>
+          <li><a class="active" href="{% url 'index' %}">Home</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/populyar">Populyar</a></li>
+        </ul>
+    </header>
+  
+    <div class="contact-container">
+      <div class="left">    
+        <form action="/action_page.php">
+        <label for="fname">Adınız</label>
+        <input type="text" id="fname" name="firstname" placeholder="Ad daxil et..">
+    
+        <label for="lname">Soyadınız</label>
+        <input type="text" id="lname" name="lastname" placeholder="Soyadını daxil et..">
+    
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+    
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    
+        <input type="submit" value="Submit">
+      </form>
+ 
+      </div>
+      <div class="right">
+        <img src="https://piekarniabuczek.pl/wp-content/uploads/2020/11/577-TORT-FIRMOWY-F10-1.jpg" width="500px" alt="">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

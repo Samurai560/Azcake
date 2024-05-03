@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azcake - online tortlar satışı </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'cakes/main.css' %}">
+</head>
+<body>
+  <div class="home-body">
+    <header>
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/populyar">Populyar</a></li>
+          </ul>
+    </header>
+     
+    <div class="container-home"  style="display: flex ;
+    " >
+        {% for tort in tortlar %}
+        <a href="tortlar/{{ tort.id }}/" style= "text-decoration: none; height: 100px; " >
+            <div class="product-card">
+                <img class="product-image" src="{{ tort.image.url }}" width="200px" height="150" alt="Cake Image">
+                <div class="product-name">{{ tort.name }}</div>
+                <div class="product-price">{{ tort.price }} AZN</div>
+                <div class="product-price">{{ tort.baked_at }}</div>
+                <div class="product-price">{{ tort.rating }}</div>
+
+            </div>
+        </a>    
+        {% endfor %}
+    </div>
+</body>
+</html>
